@@ -1,0 +1,9 @@
+Etapa,Decisión,Justificación,Riesgo,Control
+Definición del problema,Seleccionar clasificación binaria,La variable Diabetes tiene las categorías Yes y No.,Interpretar la clasificación como diagnóstico médico.,Aclarar que el modelo es únicamente académico.
+Variable objetivo,Usar Diabetes como variable objetivo,Es la variable que se desea predecir.,Utilizar registros donde el objetivo está vacío.,Eliminar registros con Diabetes faltante.
+Selección de variables,Excluir Student ID,Es un identificador y no una característica predictiva.,Introducir información irrelevante en el modelo.,Excluir la variable antes de construir X.
+Valores faltantes,Imputar variables numéricas con la mediana,Permite conservar registros sin eliminar datos innecesariamente.,La mediana puede no representar perfectamente los valores faltantes.,Realizar la imputación dentro del pipeline.
+Variables categóricas,Aplicar OneHotEncoder,Permite transformar categorías en variables numéricas.,Aparecer una categoría nueva durante la prueba.,Usar handle_unknown='ignore'.
+Escalamiento,Estandarizar variables numéricas,La regresión logística funciona mejor cuando las variables numéricas están en escalas comparables.,Realizar el escalamiento utilizando información del conjunto de prueba.,Aplicar StandardScaler dentro del pipeline.
+División de datos,Usar 80% entrenamiento y 20% prueba,Permite entrenar con la mayoría de los datos y reservar información independiente para evaluar.,Obtener una división poco representativa.,Utilizar stratify=y y random_state=42.
+Modelo,Usar Regresión Logística,Es apropiada como primer modelo para clasificación binaria.,No capturar relaciones complejas entre las variables.,Comparar posteriormente con modelos no lineales.
